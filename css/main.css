@@ -1,0 +1,75 @@
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html, body{ 
+  height: 100%;
+  margin:0;
+  padding: 0;
+}
+
+body { 
+  font-family: "Helvetica Neue", sans-serif; 
+}
+
+::scrollbar {
+  display: none;
+}
+
+
+/* ---- grid ---- */
+
+.grid {
+  background: #333333;
+  position: relative;
+  height: 100%;
+  overflow: auto;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+section {
+  position: relative;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  width: 33.333%;
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+.artistInfo {
+  color: #333;
+  font-size: 12px;
+  letter-spacing: -.2px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 14px;
+  vertical-align: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-height: 340px; 
+}
+
+.artistInfo p{
+  margin: 0;
+}
+
+.small{
+  width: 200px;
+  height: auto;
+}
+
+.small .artistInfo{
+  display: none;
+}
