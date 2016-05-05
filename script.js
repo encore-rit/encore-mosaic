@@ -35,17 +35,32 @@
   		});
 	}); 
 
-    var animate = function(){
-    	$('body').animate({scrollTop: $(document).scrollTop() + $(document).height()}, 15000, function(){
-    		var $clone = $('.grid section:last').clone();
-    		$('.grid').append($clone).packery('appended', $clone);
-    		$('.grid section:first').remove();
-    		animate();
-    	}); 
+    function animate() {
+      getNewData();
+      $('.grid section:first').remove();
+      $("body").animate({scrollTop: $(document).height()}, 30000, animate);
     }
 
-    animate();
+    animate()
   };
+
+  function getNewData(){
+    $.ajax({
+      url: "data.json",
+      method: 'GET',
+      dataType: 'json',
+      success: function(data){
+        $newSection = $('<section>');
+        $.each(data, function(i, value) {
+          $newSection.append($('<div>').attr('class','grid-item').append($('<img>').attr('src',value.photoUrl)).append($('<div>').attr('class','artistInfo').append($('<div>').append($('<p>').text(value.bio)))));
+        });
+        $('.grid').append($newSection).packery('appended', $newSection);
+      },
+      error: function(err) {
+        console.log('err', err)
+      }
+    });
+  }
 
       // Load first data from the API.
   loadData();
