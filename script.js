@@ -39,7 +39,7 @@
     function animate() {
       getNewData();
       $('.grid section:first').remove();
-      $('body').animate({scrollTop: $(document).height()}, 30000, animate);
+      $('body').animate({scrollTop: $(document).height()}, 60000, animate);
     }
 
     animate();
