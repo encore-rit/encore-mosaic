@@ -24,17 +24,8 @@
   */
   function onLoadData(data) {
     $.each(data, function(i, value) {
-      var detr = Math.floor((Math.random() * 3) + 1);
-
-      var $item = $('<div>').attr('class','grid-item').append($('<img>').attr('src',value.photoUrl)).append($('<div>').attr('class','artistInfo').append($('<div>').append($('<p>').text(value.bio))))
-
-      // if(detr == 1){
-      //   $item.addClass('small');
-      // }      
-
+      var $item = $('<div>').attr('class','grid-item').append($('<img>').attr('src',value.photoUrl)).append($('<div>').attr('class','artistInfo').append($('<div>').append($('<p>').text(value.bio))));
       $('.grid section').append($item);
-
-       $('grid').packery('layout');
     });
 
     var $grid = $('.grid').imagesLoaded( function() {
@@ -61,18 +52,9 @@
       dataType: 'json',
       success: function(data){
         $newSection = $('<section>');
-        $.each(data, function(i, value) {
-          var detr = Math.floor((Math.random() * 3) + 1);
-          
-          var $item = $('<div>').attr('class','grid-item').append($('<img>').attr('src',value.photoUrl)).append($('<div>').attr('class','artistInfo').append($('<div>').append($('<p>').text(value.bio))))
-          
-          // if(detr == 1){
-          //   $item.addClass('small');
-          // }
-
+        $.each(data, function(i, value) {     
+          var $item = $('<div>').attr('class','grid-item').append($('<img>').attr('src',value.photoUrl)).append($('<div>').attr('class','artistInfo').append($('<div>').append($('<p>').text(value.bio))));
           $newSection.append($item);
-
-          $('grid').packery('layout');
         });
         $('.grid').append($newSection).packery('appended', $newSection);
       },

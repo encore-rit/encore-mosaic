@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
 * { box-sizing: border-box; }
 
 /* force scrollbar */
@@ -8,7 +10,7 @@ html, body{
 }
 
 body { 
-  font-family: "Helvetica Neue", sans-serif; 
+  font-family: 'Open Sans', sans-serif;
 }
 
 ::scrollbar {
@@ -52,7 +54,7 @@ section {
   color: #333;
   font-size: 12px;
   letter-spacing: -.2px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
   padding: 14px;
   vertical-align: bottom;
   position: absolute;
@@ -65,11 +67,3 @@ section {
   margin: 0;
 }
 
-.small{
-  width: 200px;
-  height: auto;
-}
-
-.small .artistInfo{
-  display: none;
-}
