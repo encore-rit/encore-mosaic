@@ -28,9 +28,9 @@
 
       var $item = $('<div>').attr('class','grid-item').append($('<img>').attr('src',value.photoUrl)).append($('<div>').attr('class','artistInfo').append($('<div>').append($('<p>').text(value.bio))))
 
-      if(detr == 1){
-        $item.addClass('small');
-      }      
+      // if(detr == 1){
+      //   $item.addClass('small');
+      // }      
 
       $('.grid section').append($item);
 
@@ -66,9 +66,9 @@
           
           var $item = $('<div>').attr('class','grid-item').append($('<img>').attr('src',value.photoUrl)).append($('<div>').attr('class','artistInfo').append($('<div>').append($('<p>').text(value.bio))))
           
-          if(detr == 1){
-            $item.addClass('small');
-          }
+          // if(detr == 1){
+          //   $item.addClass('small');
+          // }
 
           $newSection.append($item);
 
