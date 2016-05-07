@@ -23,7 +23,7 @@ body {
 .grid {
   background: #333333;
   position: relative;
-  height: 100% !important; 
+  height: 100%; 
   overflow: auto;
 }
 
@@ -52,7 +52,6 @@ section {
 
 .artistInfo {
   color: #333;
-  font-size: 12px;
   background: rgba(255, 255, 255, 0.7);
   padding: 14px;
   vertical-align: bottom;

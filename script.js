@@ -48,15 +48,17 @@
 
 
     function animate() {
+      console.log("animate");
       getNewData();
       $('.grid section:first').remove();
-      $('html,body').animate({scrollTop: $(document).height()}, 60000, animate);
+      $('body').animate({scrollTop: $(document).height()}, 45000, animate);
     }
 
     animate();
   };
 
   function getNewData(){
+    console.log("getNewData");
     $.ajax({
       url: "http://encore-api.herokuapp.com/approved/photos/30",
       method: 'GET',
